@@ -152,6 +152,7 @@
 "bCamera" = "Camera";
 "bChoosePhoto" = "Choose Photo";
 "bChooseVideo" = "Choose Video";
+"bChoosePayment" = "Choose Payment";
 "bSticker" = "Sticker";
 
 "bImageMessagesNotSupported" = "Image messages are not supported";

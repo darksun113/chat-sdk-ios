@@ -24,6 +24,9 @@
 -(UIImage *) icon {
     NSString * image;
     switch (_type) {
+        case bPictureTypePayment: //kelvin
+            image = @"icn_60_gallery.png";
+            break;
         case bPictureTypeAlbumImage:
             image = @"icn_60_gallery.png";
             break;
@@ -44,6 +47,9 @@
 -(NSString *) title {
     NSString * title;
     switch (_type) {
+        case bPictureTypePayment:
+            title = [NSBundle t:bChoosePayment];
+            break;
         case bPictureTypeAlbumImage:
             title = [NSBundle t:bChoosePhoto];
             break;
@@ -69,6 +75,9 @@
         }
         else if(action.photo && NM.imageMessage) {
             return [self.parent.delegate sendImageMessage:action.photo];
+        }
+        else if(action.payment_photo && NM.imageMessage) { //kelvin
+            return [self.parent.delegate sendImageMessage:action.payment_photo];
         }
         return Nil;
     }, Nil);

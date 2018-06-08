@@ -21,6 +21,7 @@
 
 @property (nonatomic, readwrite) UIImage * coverImage;
 @property (nonatomic, readwrite) UIImage * photo;
+@property (nonatomic, readwrite) UIImage * payment_photo; //kelvin
 @property (nonatomic, readwrite) NSData * videoData;
 
 -(instancetype) initWithType: (bPictureType) type viewController: (UIViewController *) controller;

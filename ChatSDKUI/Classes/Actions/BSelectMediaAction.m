@@ -38,6 +38,9 @@
     else if (_type == bPictureTypeAlbumImage) {
         _picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *)kUTTypeImage, nil];
     }
+    else if (_type == bPictureTypePayment) {
+        _picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *)kUTTypeImage, nil];
+    }
     else if (_type == bPictureTypeCameraVideo) {
         _picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *)kUTTypeImage, (NSString *) kUTTypeMovie, nil];
     }
@@ -51,11 +54,25 @@
     
     // This code fixes an issue where the picker isn't loaded in iOS 8 and above sometimes on devices
     // This seems to be due to UIActionSheet delegate being depreciated
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+    if(_type != bPictureTypePayment) { //kelvin
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [_controller presentViewController:_picker animated:NO completion:nil];
-    }];
+        }];
+    }else {
+        _payment_photo = [self imageWithColor:UIColor.orangeColor andBounds:CGRectMake(0, 0, 100, 100)];
+    }
     
     return _promise;
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color andBounds:(CGRect)imgBounds {
+    UIGraphicsBeginImageContextWithOptions(imgBounds.size, NO, 0);
+    [color setFill];
+    UIRectFill(imgBounds);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

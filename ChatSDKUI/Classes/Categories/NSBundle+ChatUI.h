@@ -152,6 +152,7 @@
 #define bLocation @"bLocation"
 #define bCamera @"bCamera"
 #define bChoosePhoto @"bChoosePhoto"
+#define bChoosePayment @"bChoosePayment"  //kelvin
 #define bChooseVideo @"bChooseVideo"
 #define bSticker @"bSticker"
 #define bRefreshingUsers @"bRefreshingUsers"

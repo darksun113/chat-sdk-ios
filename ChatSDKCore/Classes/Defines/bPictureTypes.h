@@ -14,6 +14,7 @@ typedef enum {
     bPictureTypeCameraVideo,
     bPictureTypeAlbumImage,
     bPictureTypeAlbumVideo,
+    bPictureTypePayment, //kelvin
 } bPictureType;
 
 #endif /* bPictureTypes_h */

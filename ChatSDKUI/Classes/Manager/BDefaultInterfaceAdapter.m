@@ -143,6 +143,8 @@
     
     if (imageEnabled) {
         [options addObject:[[BMediaChatOption alloc] initWithType:bPictureTypeAlbumImage]];
+        //kelvin
+        [options addObject:[[BMediaChatOption alloc] initWithType:bPictureTypePayment]];
     }
     if (videoEnabled) {
         [options addObject:[[BMediaChatOption alloc] initWithType:bPictureTypeAlbumVideo]];
