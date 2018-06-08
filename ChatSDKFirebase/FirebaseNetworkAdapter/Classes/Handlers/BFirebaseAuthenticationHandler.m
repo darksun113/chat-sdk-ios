@@ -153,19 +153,23 @@
             break;
         case bAccountTypeUsername:
         {
-            [[FIRAuth auth] signInWithEmail:details.username password:details.password completion:handleResult];
+            //[[FIRAuth auth] signInWithEmail:details.username password:details.password completion:handleResult];
+            [[FIRAuth auth] signInAndRetrieveDataWithEmail:details.username password:details.password completion:handleResult];
         }
             break;
         case bAccountTypeCustom:
-            [[FIRAuth auth] signInWithCustomToken:details.token completion:handleResult];
+            //[[FIRAuth auth] signInWithCustomToken:details.token completion:handleResult];
+            [[FIRAuth auth] signInAndRetrieveDataWithCustomToken:details.token completion:handleResult];
             break;
         case bAccountTypeRegister:
         {
-            [[FIRAuth auth] createUserWithEmail:details.username password:details.password completion:handleResult];
+            //[[FIRAuth auth] createUserWithEmail:details.username password:details.password completion:handleResult];
+            [[FIRAuth auth] createUserAndRetrieveDataWithEmail:details.username password:details.password completion:handleResult];
         }
             break;
         case bAccountTypeAnonymous: {
-            [[FIRAuth auth] signInAnonymouslyWithCompletion:handleResult];
+            //[[FIRAuth auth] signInAnonymouslyWithCompletion:handleResult];
+            [[FIRAuth auth] signInAnonymouslyAndRetrieveDataWithCompletion:handleResult];
         }
             break;
         default:
