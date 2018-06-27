@@ -43,6 +43,7 @@
 		B5B4AB9C208F29F3000F9059 /* BFirebasePublicThreadHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4AB76208F29F3000F9059 /* BFirebasePublicThreadHandler.m */; };
 		B5B4AB9D208F29F3000F9059 /* BFirebaseModerationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4AB79208F29F3000F9059 /* BFirebaseModerationHandler.m */; };
 		B5B4AB9E208F29F3000F9059 /* BFirebaseCoreHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4AB7E208F29F3000F9059 /* BFirebaseCoreHandler.m */; };
+		B613AA8A20E411E400BA848B /* OtherServiceCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613AA8920E411E400BA848B /* OtherServiceCollectionViewController.swift */; };
 		E0B40CBFF82242CA7A068C9B /* Pods_ChatSDKSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49984E496C1AAC43FD13FB54 /* Pods_ChatSDKSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		B5B4AB7C208F29F3000F9059 /* BFirebaseUsersHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFirebaseUsersHandler.h; sourceTree = "<group>"; };
 		B5B4AB7D208F29F3000F9059 /* BFirebasePublicThreadHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFirebasePublicThreadHandler.h; sourceTree = "<group>"; };
 		B5B4AB7E208F29F3000F9059 /* BFirebaseCoreHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFirebaseCoreHandler.m; sourceTree = "<group>"; };
+		B613AA8920E411E400BA848B /* OtherServiceCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherServiceCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		ACF7BE6D1C8D8AD7003E8983 = {
 			isa = PBXGroup;
 			children = (
+				B613AA8820E4117D00BA848B /* OurStuffs */,
 				ACF7BE781C8D8AD7003E8983 /* ChatSDKSwift */,
 				ACF7BE771C8D8AD7003E8983 /* Products */,
 				E015E77CA0F6ACD8F4540CE4 /* Pods */,
@@ -314,6 +317,14 @@
 				B5B4AB7E208F29F3000F9059 /* BFirebaseCoreHandler.m */,
 			);
 			path = Handlers;
+			sourceTree = "<group>";
+		};
+		B613AA8820E4117D00BA848B /* OurStuffs */ = {
+			isa = PBXGroup;
+			children = (
+				B613AA8920E411E400BA848B /* OtherServiceCollectionViewController.swift */,
+			);
+			path = OurStuffs;
 			sourceTree = "<group>";
 		};
 		E015E77CA0F6ACD8F4540CE4 /* Pods */ = {
@@ -544,6 +555,7 @@
 				B5B4AB9B208F29F3000F9059 /* BFirebaseAuthenticationHandler.m in Sources */,
 				B5B4AB80208F29F3000F9059 /* BLocalNotificationDelegate.m in Sources */,
 				B5B4AB90208F29F3000F9059 /* CCThreadWrapper.m in Sources */,
+				B613AA8A20E411E400BA848B /* OtherServiceCollectionViewController.swift in Sources */,
 				B5B4AB93208F29F3000F9059 /* BFirebaseNetworkAdapter.m in Sources */,
 				B5B4AB82208F29F3000F9059 /* BFirebaseUploadHandler.m in Sources */,
 				B5B4AB98208F29F3000F9059 /* BFirebaseUsersHandler.m in Sources */,
