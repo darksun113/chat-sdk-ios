@@ -19,7 +19,7 @@
     return self;
 }
 
-- (RXPromise * ) execute {
+- (RXPromise * ) BSelectMediaActionexecute {
     
     if (!_promise) {
         _promise = [RXPromise new];
@@ -50,7 +50,7 @@
     
     // Make sure our picker is set to album as elsewhere we are using it for the camera
     _picker.sourceType = _type == bPictureTypeCameraImage || _type == bPictureTypeCameraVideo ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
-    
+    NSLog(@"ZZZZZZZZZZZZZZZ");
     
     // This code fixes an issue where the picker isn't loaded in iOS 8 and above sometimes on devices
     // This seems to be due to UIActionSheet delegate being depreciated
@@ -59,20 +59,41 @@
         [_controller presentViewController:_picker animated:NO completion:nil];
         }];
     }else {
-        _payment_photo = [self imageWithColor:UIColor.orangeColor andBounds:CGRectMake(0, 0, 100, 100)];
+        NSLog(@"ZZZZZZZZZZZZZZZ22222");
+        _payment_photo = [self imageWithColor:UIColor.orangeColor andBounds:CGRectMake(0, 0, 100, 50)];
+        [_promise resolveWithResult: Nil];
+        //_promise = Nil;
     }
     
     return _promise;
 }
 
+//Kelvin
 - (UIImage *)imageWithColor:(UIColor *)color andBounds:(CGRect)imgBounds {
     UIGraphicsBeginImageContextWithOptions(imgBounds.size, NO, 0);
     [color setFill];
     UIRectFill(imgBounds);
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+    img = [BSelectMediaAction drawText:@"$10" inImage:img atPoint:CGPointMake(40, 15)];
     return img;
+}
+
++(UIImage*) drawText:(NSString*) text
+             inImage:(UIImage*)  image
+             atPoint:(CGPoint)   point
+{
+    
+    UIFont *font = [UIFont boldSystemFontOfSize:12];
+    UIGraphicsBeginImageContext(image.size);
+    [image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+    CGRect rect = CGRectMake(point.x, point.y, image.size.width, image.size.height);
+    [[UIColor whiteColor] set];
+    [text drawInRect:CGRectIntegral(rect) withFont:font];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

@@ -68,15 +68,19 @@
 }
 
 - (RXPromise * ) execute {
+    NSLog(@"WWWWWWWWWWWWWW");
     BSelectMediaAction * action =  [[BSelectMediaAction alloc] initWithType:_type viewController:self.parent.delegate.currentViewController];
     return [action execute].thenOnMain(^id(id success) {
+        NSLog(@"WWWWWXXXXXXXXX");
         if(action.videoData && action.coverImage && NM.videoMessage) {
             return [self.parent.delegate sendVideoMessage:action.videoData withCoverImage:action.coverImage];
         }
         else if(action.photo && NM.imageMessage) {
+            NSLog(@"XXXXXXXXXXXXX");
             return [self.parent.delegate sendImageMessage:action.photo];
         }
         else if(action.payment_photo && NM.imageMessage) { //kelvin
+            NSLog(@"YYYYYYYYYYYYYY");
             return [self.parent.delegate sendImageMessage:action.payment_photo];
         }
         return Nil;
